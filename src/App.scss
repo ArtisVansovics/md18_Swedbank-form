@@ -1,16 +1,4 @@
-// #031226, #1F788C, #F2D57E, #F2C185, #F28D8D
-
-.App {
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
-  background-color: #073A59;
-  background-image: linear-gradient(to top, #19687F, #68B4BD,  #175673, #042342);
-  color: #F2C185;
-  padding: 30px 20px;
-}
-
-.page {
+.app {
   display: flex;
   flex-flow: column;
   gap: 32px;
@@ -19,9 +7,14 @@
   margin-right: auto;
   margin-left: auto;
   align-items: center;
-  background-color: #287499;
-  color: #D99C52;
+  background-color: #fdf6ee;
+  color: #512b2b;
   padding: 20px;
+}
+
+.app__title {
+  color: #fb4f00;
+  font-size: 32px;
 }
 
 .page__text {
@@ -52,6 +45,7 @@
   flex-flow: row wrap;
   justify-content: center;
   gap: 32px;
+  width: 100%;
 }
 
 .box--stretch {
