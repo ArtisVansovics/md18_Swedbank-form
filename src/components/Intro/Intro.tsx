@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Button from '../Button/Button';
+import ButtonPrimary from '../Button/ButtonPrimary';
 
 type IntroProps = {
   onClick: () => void;
@@ -7,10 +7,12 @@ type IntroProps = {
 
 const Intro:FC<IntroProps> = ({ onClick }) => (
   <div className="box">
-    <h1 className="page__title">
+    <h1 className="title">
       Home Small loan
     </h1>
-    <h2>For renovating or buying a property</h2>
+    <h2 className="sub-title">
+      For renovating or buying a property
+    </h2>
     <p>Until 31.05.2022. loan agreement fee free of charge.</p>
     <ul>
       <li>Loan from 5000 to 20 000 EUR</li>
@@ -18,7 +20,7 @@ const Intro:FC<IntroProps> = ({ onClick }) => (
       <li>No down payment required</li>
       <li>Money available in your account immediately after signing the contract</li>
     </ul>
-    <Button
+    <ButtonPrimary
       title="Fill out the application"
       onClick={onClick}
     />

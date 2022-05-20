@@ -7,8 +7,9 @@
   cursor: pointer;
   user-select: none;
   border-radius: 2px;
-  border: none;
+  border: 1px solid transparent;
   background-color: #fdc129;
+  font-family: 'swedbank_headlinebold', sans-serif;
   font-size: 1.125rem;
   transition: background-color 0.7s;
 

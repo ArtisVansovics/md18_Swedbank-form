@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import Button from '../../Button/Button';
+import ButtonPrimary from '../../Button/ButtonPrimary';
+import ButtonSecondary from '../../ButtonSecondary/ButtonSecondary';
 
 type Question01Props = {
   onPreviousClick: () => void;
@@ -8,15 +9,17 @@ type Question01Props = {
 
 const Question01:FC<Question01Props> = ({ onNextClick, onPreviousClick }) => (
   <div className="box">
-    <h1>01: Your name</h1>
+    <h1 className="title">
+      01: Your name
+    </h1>
     <input
       type="text"
       placeholder="Enter your first name"
       required
     />
     <div className="box__row">
-      <Button title="Previous" onClick={onPreviousClick} />
-      <Button title="Next" onClick={onNextClick} />
+      <ButtonSecondary title="Previous" onClick={onPreviousClick} />
+      <ButtonPrimary title="Next" onClick={onNextClick} />
     </div>
   </div>
 );

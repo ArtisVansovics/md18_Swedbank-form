@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-import styles from './Button.module.scss';
+import styles from './ButtonPrimary.module.scss';
 
 type ButtonProps = {
   title: string
-  onClick?: () => void
+  onClick: () => void
   disabled?: boolean;
 }
 
-const Button:FC<ButtonProps> = ({ title, onClick, disabled }) => (
+const ButtonPrimary:FC<ButtonProps> = ({ title, onClick, disabled }) => (
   <button
     className={styles.button}
     onClick={onClick}
@@ -17,4 +17,4 @@ const Button:FC<ButtonProps> = ({ title, onClick, disabled }) => (
   </button>
 );
 
-export default Button;
+export default ButtonPrimary;
