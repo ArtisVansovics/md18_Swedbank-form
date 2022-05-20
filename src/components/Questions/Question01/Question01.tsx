@@ -26,8 +26,6 @@ const Question01:FC<Question01Props> = ({
           type="text"
           placeholder="Enter your full name"
           id="nameId"
-          pattern="^\S+\s\S+$"
-          required
           value={name}
           onChange={(e) => onInputName(e.target.value)}
         />
