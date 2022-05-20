@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'swedbank_headlinebold';
+  src: url('../fonts/SwedbankHeadline_Web/Swedbank Headline Bold/SwedbankHeadline-Bold.eot');
+  src: url('../fonts/SwedbankHeadline_Web/Swedbank Headline Bold/SwedbankHeadline-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/SwedbankHeadline_Web/Swedbank Headline Bold/SwedbankHeadline-Bold.woff2') format('woff2'),
+  url('../fonts/SwedbankHeadline_Web/Swedbank Headline Bold/SwedbankHeadline-Bold.woff') format('woff'),
+  url('../fonts/SwedbankHeadline_Web/Swedbank Headline Bold/SwedbankHeadline-Bold.ttf') format('truetype'),
+  url('../fonts/SwedbankHeadline_Web/Swedbank Headline Bold/SwedbankHeadline-Bold.svg#swedbank_headlinebold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
