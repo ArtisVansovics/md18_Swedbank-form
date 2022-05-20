@@ -3,21 +3,38 @@ import ButtonPrimary from '../../Button/ButtonPrimary';
 import ButtonSecondary from '../../ButtonSecondary/ButtonSecondary';
 
 type Question01Props = {
+  name: string;
+  errorMessage: string;
   onPreviousClick: () => void;
   onNextClick: () => void;
+  onInputName: (value: string) => void;
 }
 
-const Question01:FC<Question01Props> = ({ onNextClick, onPreviousClick }) => (
-  <div className="box">
-    <h1 className="title">
-      01: Your name
-    </h1>
-    <input
-      type="text"
-      placeholder="Enter your first name"
-      required
-    />
-    <div className="box__row">
+const Question01:FC<Question01Props> = ({
+  onNextClick, onPreviousClick, onInputName, name, errorMessage,
+}) => (
+  <div className="form">
+    <h3 className="small-title">
+      Step one
+    </h3>
+    <div className="form__group">
+      <label htmlFor="nameId" className="label">
+        Full name
+        <br />
+        <input
+          className={`input ${errorMessage && 'error-input'}`}
+          type="text"
+          placeholder="Enter your full name"
+          id="nameId"
+          pattern="^\S+\s\S+$"
+          required
+          value={name}
+          onChange={(e) => onInputName(e.target.value)}
+        />
+        {errorMessage && <p className="error">{errorMessage}</p>}
+      </label>
+    </div>
+    <div className="button-row">
       <ButtonSecondary title="Previous" onClick={onPreviousClick} />
       <ButtonPrimary title="Next" onClick={onNextClick} />
     </div>
