@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import './App.scss';
-
 import Intro from './components/Intro/Intro';
 import Question01 from './components/Questions/Question01/Question01';
 import Question02 from './components/Questions/Question02/Question02';
+import Question03 from './components/Questions/Question03/Question03';
 
 const initialFormData = {
   name: '',
   address: '',
+  purpose: '',
+  obligations: '',
+  employment: '',
 };
+
+const textErrorMessage = 'This field is mandatory';
+const selectionErrorMessage = 'You must choose an option';
 
 const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -23,11 +29,12 @@ const App = () => {
 
     setCurrentQuestion(currentQuestion - 1);
   };
-  const handleNext = (value: string) => {
+
+  const handleNext = (value: string, errorMessage: string) => {
     setError('');
 
     if (!value) {
-      setError('This field is mandatory');
+      setError(errorMessage);
 
       return;
     }
@@ -38,7 +45,6 @@ const App = () => {
   };
 
   console.log(formData);
-  console.log(hideHint);
 
   return (
     <div className="app">
@@ -58,7 +64,7 @@ const App = () => {
                       name={formData.name}
                       errorMessage={error}
                       onPreviousClick={() => handlePrevious()}
-                      onNextClick={() => handleNext(formData.name)}
+                      onNextClick={() => handleNext(formData.name, textErrorMessage)}
                       onInputName={(value) => {
                         setFormData({ ...formData, name: value });
                       }}
@@ -71,9 +77,19 @@ const App = () => {
                         hideHint={hideHint}
                         onHint={() => setHideHint(!hideHint)}
                         onPreviousClick={() => handlePrevious()}
-                        onNextClick={() => handleNext(formData.address)}
+                        onNextClick={() => handleNext(formData.address, textErrorMessage)}
                         onInputAddress={(value) => {
                           setFormData({ ...formData, address: value });
+                        }}
+                      />
+                    )}
+                    {currentQuestion === 3 && (
+                      <Question03
+                        errorMessage={error}
+                        onPreviousClick={() => handlePrevious()}
+                        onNextClick={() => handleNext(formData.purpose, selectionErrorMessage)}
+                        onRadioSelection={(value) => {
+                          setFormData({ ...formData, purpose: value });
                         }}
                       />
                     )}
