@@ -3,17 +3,15 @@ import styles from './ButtonSecondary.module.scss';
 
 type ButtonSecondaryProps = {
   title: string;
-  onClick: () => void;
-  disabled?: boolean;
+  onClick?: () => void;
 }
 
 const ButtonSecondary:FC<ButtonSecondaryProps> = ({
-  title, onClick, disabled,
+  title, onClick,
 }) => (
   <button
     className={styles.button}
     onClick={onClick}
-    disabled={disabled}
   >
     {title}
   </button>

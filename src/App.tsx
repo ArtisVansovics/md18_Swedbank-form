@@ -6,6 +6,7 @@ import Question02 from './components/Questions/Question02/Question02';
 import Question03 from './components/Questions/Question03/Question03';
 import Question04 from './components/Questions/Question04/Question04';
 import Question05 from './components/Questions/Question05/Question05';
+import Summary from './components/Summary/Summary';
 
 const initialFormData = {
   name: '',
@@ -126,6 +127,16 @@ const App = () => {
                         onSelection={(value) => {
                           setFormData({ ...formData, education: value });
                         }}
+                      />
+                    )}
+                    {currentQuestion === 6 && (
+                      <Summary
+                        name={formData.name}
+                        address={formData.address}
+                        purpose={formData.purpose}
+                        householdInfo={formData.householdInfo}
+                        education={formData.education}
+                        onPreviousClick={() => handlePrevious()}
                       />
                     )}
                   </div>
