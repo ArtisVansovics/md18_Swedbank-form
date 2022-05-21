@@ -4,12 +4,13 @@ import Intro from './components/Intro/Intro';
 import Question01 from './components/Questions/Question01/Question01';
 import Question02 from './components/Questions/Question02/Question02';
 import Question03 from './components/Questions/Question03/Question03';
+import Question04 from './components/Questions/Question04/Question04';
 
 const initialFormData = {
   name: '',
   address: '',
   purpose: '',
-  obligations: '',
+  householdInfo: [] as string[],
   employment: '',
 };
 
@@ -22,6 +23,20 @@ const App = () => {
   const [error, setError] = useState('');
   const [hideHint, setHideHint] = useState(true);
 
+  const filterOut = (value: string) => (
+    setFormData({
+      ...formData,
+      householdInfo: [
+        ...formData.householdInfo.filter((savedValue) => savedValue !== value)],
+    })
+  );
+
+  const handleOptionSelection = (value: string) => {
+    if (formData.householdInfo.includes(value)) {
+      filterOut(value);
+    } else setFormData({ ...formData, householdInfo: [...formData.householdInfo, value] });
+  };
+
   const handlePrevious = () => {
     setError('');
 
@@ -30,10 +45,10 @@ const App = () => {
     setCurrentQuestion(currentQuestion - 1);
   };
 
-  const handleNext = (value: string, errorMessage: string) => {
+  const handleNext = (value: string | string[], errorMessage: string) => {
     setError('');
 
-    if (!value) {
+    if (!value || value.length === 0) {
       setError(errorMessage);
 
       return;
@@ -91,6 +106,14 @@ const App = () => {
                         onRadioSelection={(value) => {
                           setFormData({ ...formData, purpose: value });
                         }}
+                      />
+                    )}
+                    {currentQuestion === 4 && (
+                      <Question04
+                        errorMessage={error}
+                        onPreviousClick={() => handlePrevious()}
+                        onNextClick={() => handleNext(formData.householdInfo, selectionErrorMessage)}
+                        onOptionSelection={(value) => handleOptionSelection(value)}
                       />
                     )}
                   </div>
