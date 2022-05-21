@@ -14,7 +14,7 @@ const Intro:FC<IntroProps> = ({ onClick }) => (
       For renovating or buying a property
     </h2>
     <p>Until 31.05.2022. loan agreement fee free of charge.</p>
-    <ul>
+    <ul className="list">
       <li>Loan from 5000 to 20 000 EUR</li>
       <li>No mortgage placed on real estate</li>
       <li>No down payment required</li>

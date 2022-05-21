@@ -3,6 +3,8 @@ import ButtonPrimary from '../../ButtonPrimary/ButtonPrimary';
 import ButtonSecondary from '../../ButtonSecondary/ButtonSecondary';
 
 type Question04Props = {
+  isChildrenChecked: boolean;
+  isDependantsChecked: boolean;
   errorMessage: string;
   onPreviousClick: () => void;
   onNextClick: () => void;
@@ -10,7 +12,7 @@ type Question04Props = {
 }
 
 const Question04:FC<Question04Props> = ({
-  onNextClick, onPreviousClick, onOptionSelection, errorMessage,
+  onNextClick, onPreviousClick, onOptionSelection, errorMessage, isDependantsChecked, isChildrenChecked,
 }) => (
   <div className="form">
     <h3 className="small-title">
@@ -26,6 +28,7 @@ const Question04:FC<Question04Props> = ({
           id="childrenId"
           value="Household has children"
           onChange={(e) => onOptionSelection(e.target.value)}
+          checked={isChildrenChecked}
         />
         Household has children
         <p className="tooltip__text">Children up to 18 years of age</p>
@@ -38,6 +41,7 @@ const Question04:FC<Question04Props> = ({
           id="dependantsId"
           value="Household has dependants"
           onChange={(e) => onOptionSelection(e.target.value)}
+          checked={isDependantsChecked}
         />
         Household has dependants
       </label>

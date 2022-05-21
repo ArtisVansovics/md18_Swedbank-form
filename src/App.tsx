@@ -61,8 +61,6 @@ const App = () => {
     setCurrentQuestion(currentQuestion + 1);
   };
 
-  console.log(formData);
-
   return (
     <div className="app">
       <div className="container">
@@ -102,6 +100,8 @@ const App = () => {
                     )}
                     {currentQuestion === 3 && (
                       <Question03
+                        isPurchaseChecked={formData.purpose === 'Purchase of housing'}
+                        isRenovationChecked={formData.purpose === 'Housing renovation or repair'}
                         errorMessage={error}
                         onPreviousClick={() => handlePrevious()}
                         onNextClick={() => handleNext(formData.purpose, selectionErrorMessage)}
@@ -112,6 +112,8 @@ const App = () => {
                     )}
                     {currentQuestion === 4 && (
                       <Question04
+                        isChildrenChecked={formData.householdInfo.includes('Household has children')}
+                        isDependantsChecked={formData.householdInfo.includes('Household has dependants')}
                         errorMessage={error}
                         onPreviousClick={() => handlePrevious()}
                         onNextClick={() => handleNext(formData.householdInfo, selectionErrorMessage)}

@@ -3,6 +3,8 @@ import ButtonPrimary from '../../ButtonPrimary/ButtonPrimary';
 import ButtonSecondary from '../../ButtonSecondary/ButtonSecondary';
 
 type Question03Props = {
+  isPurchaseChecked: boolean;
+  isRenovationChecked: boolean;
   errorMessage: string;
   onPreviousClick: () => void;
   onNextClick: () => void;
@@ -10,7 +12,7 @@ type Question03Props = {
 }
 
 const Question03:FC<Question03Props> = ({
-  onNextClick, onPreviousClick, onRadioSelection, errorMessage,
+  onNextClick, onPreviousClick, onRadioSelection, errorMessage, isPurchaseChecked, isRenovationChecked,
 }) => (
   <div className="form">
     <h3 className="small-title">
@@ -26,6 +28,7 @@ const Question03:FC<Question03Props> = ({
           id="purchaseId"
           value="Purchase of housing"
           onChange={(e) => onRadioSelection(e.target.value)}
+          checked={isPurchaseChecked}
         />
         Purchase of housing
       </label>
@@ -37,6 +40,7 @@ const Question03:FC<Question03Props> = ({
           id="renovationId"
           value="Housing renovation or repair"
           onChange={(e) => onRadioSelection(e.target.value)}
+          checked={isRenovationChecked}
         />
         Housing renovation or repair
       </label>
