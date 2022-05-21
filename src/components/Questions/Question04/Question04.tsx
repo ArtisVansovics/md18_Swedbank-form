@@ -18,7 +18,7 @@ const Question04:FC<Question04Props> = ({
     </h3>
     <div className="form__group form__group--narrow">
       <p>Information on household</p>
-      <label htmlFor="childrenId" className="label label--checkbox">
+      <label htmlFor="childrenId" className="label label--checkbox tooltip">
         <input
           className={`label--checkbox__input ${errorMessage && 'error-input'}`}
           type="checkbox"
@@ -28,6 +28,7 @@ const Question04:FC<Question04Props> = ({
           onChange={(e) => onOptionSelection(e.target.value)}
         />
         Household has children
+        <p className="tooltip__text">Children up to 18 years of age</p>
       </label>
       <label htmlFor="dependantsId" className="label label--checkbox">
         <input
