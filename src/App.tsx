@@ -3,10 +3,11 @@ import './App.scss';
 
 import Intro from './components/Intro/Intro';
 import Question01 from './components/Questions/Question01/Question01';
+import Question02 from './components/Questions/Question02/Question02';
 
 const initialFormData = {
   name: '',
-  gender: '',
+  address: '',
 };
 
 const App = () => {
@@ -49,12 +50,23 @@ const App = () => {
                     <Question01
                       name={formData.name}
                       errorMessage={error}
+                      onPreviousClick={() => handlePrevious()}
+                      onNextClick={() => handleNext(formData.name)}
                       onInputName={(value) => {
                         setFormData({ ...formData, name: value });
                       }}
-                      onPreviousClick={() => handlePrevious()}
-                      onNextClick={() => handleNext(formData.name)}
                     />
+                    )}
+                    {currentQuestion === 2 && (
+                      <Question02
+                        address={formData.address}
+                        errorMessage={error}
+                        onPreviousClick={() => handlePrevious()}
+                        onNextClick={() => handleNext(formData.address)}
+                        onInputAddress={(value) => {
+                          setFormData({ ...formData, address: value });
+                        }}
+                      />
                     )}
                   </div>
                 </div>
