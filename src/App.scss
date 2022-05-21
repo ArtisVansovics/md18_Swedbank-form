@@ -183,14 +183,6 @@
     border-color: #512b2b;
   }
 
-  &:checked {
-    border-color: #512b2b;
-    background-color: #512b2b;
-    background-image: url("https://design.swedbankpay.com/v/9.1.0/designguide/assets/check-mark.svg");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-  }
-
   &:hover::before {
     background-color: #d4c4bc;
     border-radius: 50%;
@@ -201,6 +193,14 @@
     left: -7px;
     position: absolute;
     z-index: -1;
+  }
+
+  &:checked {
+    border-color: #512b2b;
+    background-color: #512b2b;
+    background-image: url("https://design.swedbankpay.com/v/9.1.0/designguide/assets/check-mark.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
   }
 }
 
@@ -239,6 +239,16 @@
     border-style: solid;
     border-color: #ffffff transparent transparent transparent;
   }
+}
+
+.select {
+  background-color: #ffffff;
+  border: 1px solid #d4c4bc;
+  border-bottom: 2px solid #72605e;
+  border-radius: 2px 2px 0 0;
+  box-shadow: none;
+  height: 3rem;
+  padding: 0 .75rem;
 }
 
 .error {

@@ -15,7 +15,7 @@ const Question01:FC<Question01Props> = ({
 }) => (
   <div className="form">
     <h3 className="small-title">
-      Step one
+      First question
     </h3>
     <div className="form__group">
       <label htmlFor="nameId" className="label">

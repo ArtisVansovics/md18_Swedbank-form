@@ -14,7 +14,7 @@ const Question03:FC<Question03Props> = ({
 }) => (
   <div className="form">
     <h3 className="small-title">
-      Step three
+      Third question
     </h3>
     <div className="form__group form__group--narrow">
       <p>Loan purpose</p>

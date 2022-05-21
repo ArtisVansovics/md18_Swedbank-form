@@ -5,13 +5,14 @@ import Question01 from './components/Questions/Question01/Question01';
 import Question02 from './components/Questions/Question02/Question02';
 import Question03 from './components/Questions/Question03/Question03';
 import Question04 from './components/Questions/Question04/Question04';
+import Question05 from './components/Questions/Question05/Question05';
 
 const initialFormData = {
   name: '',
   address: '',
   purpose: '',
   householdInfo: [] as string[],
-  employment: '',
+  education: '',
 };
 
 const textErrorMessage = 'This field is mandatory';
@@ -114,6 +115,17 @@ const App = () => {
                         onPreviousClick={() => handlePrevious()}
                         onNextClick={() => handleNext(formData.householdInfo, selectionErrorMessage)}
                         onOptionSelection={(value) => handleOptionSelection(value)}
+                      />
+                    )}
+                    {currentQuestion === 5 && (
+                      <Question05
+                        selectedEducation={formData.education}
+                        errorMessage={error}
+                        onPreviousClick={() => handlePrevious()}
+                        onNextClick={() => handleNext(formData.education, selectionErrorMessage)}
+                        onSelection={(value) => {
+                          setFormData({ ...formData, education: value });
+                        }}
                       />
                     )}
                   </div>
