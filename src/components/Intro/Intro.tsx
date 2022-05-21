@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import ButtonPrimary from '../Button/ButtonPrimary';
+import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 
 type IntroProps = {
   onClick: () => void;

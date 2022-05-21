@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import ButtonPrimary from '../../Button/ButtonPrimary';
+import ButtonPrimary from '../../ButtonPrimary/ButtonPrimary';
 import ButtonSecondary from '../../ButtonSecondary/ButtonSecondary';
 
 type Question01Props = {
@@ -32,8 +32,11 @@ const Question01:FC<Question01Props> = ({
       </label>
     </div>
     <div className="button-row">
-      <ButtonSecondary title="Previous" onClick={onPreviousClick} />
-      <ButtonPrimary title="Next" onClick={onNextClick} />
+      <ButtonSecondary
+        title="Previous"
+        onClick={onPreviousClick}
+      />
+      <ButtonPrimary title="Next step" onClick={onNextClick} />
     </div>
   </div>
 );

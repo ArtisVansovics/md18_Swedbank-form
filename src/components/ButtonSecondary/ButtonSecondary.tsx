@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import styles from './ButtonSecondary.module.scss';
 
 type ButtonSecondaryProps = {
-  title: string
-  onClick: () => void
+  title: string;
+  onClick: () => void;
   disabled?: boolean;
 }
 

@@ -121,3 +121,21 @@
   border-width: 2px;
   border-color: #c5131c;
 }
+
+.hint__button {
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #257886;
+  cursor: pointer;
+  font-size: .875rem;
+  line-height: 1rem;
+  padding-right: .25rem;
+}
+
+.hint__text {
+  color: #72605e;
+  font-size: .875rem;
+}
+

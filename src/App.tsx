@@ -14,9 +14,13 @@ const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [formData, setFormData] = useState(initialFormData);
   const [error, setError] = useState('');
+  const [hideHint, setHideHint] = useState(true);
 
   const handlePrevious = () => {
     setError('');
+
+    setHideHint(true);
+
     setCurrentQuestion(currentQuestion - 1);
   };
   const handleNext = (value: string) => {
@@ -28,10 +32,13 @@ const App = () => {
       return;
     }
 
+    setHideHint(true);
+
     setCurrentQuestion(currentQuestion + 1);
   };
 
   console.log(formData);
+  console.log(hideHint);
 
   return (
     <div className="app">
@@ -61,6 +68,8 @@ const App = () => {
                       <Question02
                         address={formData.address}
                         errorMessage={error}
+                        hideHint={hideHint}
+                        onHint={() => setHideHint(!hideHint)}
                         onPreviousClick={() => handlePrevious()}
                         onNextClick={() => handleNext(formData.address)}
                         onInputAddress={(value) => {
