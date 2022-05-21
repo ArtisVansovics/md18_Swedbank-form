@@ -18,9 +18,9 @@ const Question04:FC<Question04Props> = ({
     </h3>
     <div className="form__group form__group--narrow">
       <p>Information on household</p>
-      <label htmlFor="childrenId" className="checkbox">
+      <label htmlFor="childrenId" className="label label--checkbox">
         <input
-          className={`checkbox__input ${errorMessage && 'error-input'}`}
+          className={`label--checkbox__input ${errorMessage && 'error-input'}`}
           type="checkbox"
           name="checkboxHousehold"
           id="childrenId"
@@ -29,9 +29,9 @@ const Question04:FC<Question04Props> = ({
         />
         Household has children
       </label>
-      <label htmlFor="dependantsId" className="checkbox">
+      <label htmlFor="dependantsId" className="label label--checkbox">
         <input
-          className={`checkbox__input ${errorMessage && 'error-input'}`}
+          className={`label--checkbox__input ${errorMessage && 'error-input'}`}
           type="checkbox"
           name="checkboxHousehold"
           id="dependantsId"

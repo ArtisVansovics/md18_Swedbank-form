@@ -96,11 +96,6 @@
   width: 100%;
 }
 
-.label {
-  font-weight: 300;
-  margin-bottom: 4px;
-}
-
 .input {
   width: 100%;
   background-color: #ffffff;
@@ -117,28 +112,30 @@
   padding: 16px 12px;
 }
 
-.radio {
+.label {
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.label--radio {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   user-select: none;
-  position: relative;
-  font-weight: 300;
 }
 
-.radio__input {
+.label--radio__input {
   display: grid;
   place-content: center;
   appearance: none;
   background-color: #fff;
   margin: 0;
-  font: inherit;
-  color: currentColor;
   width: 22px;
   height: 22px;
   border: 2px solid #a38b80;
   border-radius: 50%;
+  cursor: pointer;
 
   &:hover {
     border-color: #512b2b;
@@ -156,6 +153,54 @@
 
   &:checked::before {
     transform: scale(1);
+  }
+}
+
+.label--checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 0;
+}
+
+.label--checkbox__input {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #a38b80;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #512b2b;
+  }
+
+  &:checked {
+    border-color: #512b2b;
+    background-color: #512b2b;
+    background-image: url("https://design.swedbankpay.com/v/9.1.0/designguide/assets/check-mark.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &:hover::before {
+    background-color: #d4c4bc;
+    border-radius: 50%;
+    content: "";
+    height: 36px;
+    width: 36px;
+    top: -6px;
+    left: -7px;
+    position: absolute;
+    z-index: -1;
   }
 }
 

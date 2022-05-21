@@ -18,9 +18,9 @@ const Question03:FC<Question03Props> = ({
     </h3>
     <div className="form__group form__group--narrow">
       <p>Loan purpose</p>
-      <label htmlFor="purchaseId" className="radio">
+      <label htmlFor="purchaseId" className="label label--radio">
         <input
-          className={`radio__input ${errorMessage && 'error-input'}`}
+          className={`label--radio__input ${errorMessage && 'error-input'}`}
           type="radio"
           name="radioPurpose"
           id="purchaseId"
@@ -29,9 +29,9 @@ const Question03:FC<Question03Props> = ({
         />
         Purchase of housing
       </label>
-      <label htmlFor="renovationId" className="radio">
+      <label htmlFor="renovationId" className="label label--radio">
         <input
-          className={`radio__input ${errorMessage && 'error-input'}`}
+          className={`label--radio__input ${errorMessage && 'error-input'}`}
           type="radio"
           name="radioPurpose"
           id="renovationId"
