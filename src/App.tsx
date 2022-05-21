@@ -10,13 +10,24 @@ const initialFormData = {
 };
 
 const App = () => {
-  const [questionNr, setQuestionNr] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [formData, setFormData] = useState(initialFormData);
   const [error, setError] = useState('');
 
   const handlePrevious = () => {
     setError('');
-    setQuestionNr(questionNr - 1);
+    setCurrentQuestion(currentQuestion - 1);
+  };
+  const handleNext = (value: string) => {
+    setError('');
+
+    if (!value) {
+      setError('This field is mandatory');
+
+      return;
+    }
+
+    setCurrentQuestion(currentQuestion + 1);
   };
 
   console.log(formData);
@@ -27,14 +38,14 @@ const App = () => {
         <div className="row">
           <div className="col-xs-12">
             <div className="box">
-              {questionNr === 0 && (
-                <Intro onClick={() => setQuestionNr(questionNr + 1)} />
+              {currentQuestion === 0 && (
+                <Intro onClick={() => setCurrentQuestion(currentQuestion + 1)} />
               )}
-              {questionNr !== 0 && (
+              {currentQuestion !== 0 && (
               <div className="row center-xs">
                 <div className="col-xs-12 col-sm-10 col-md-8 col-lg-6">
                   <div className="box">
-                    {questionNr === 1 && (
+                    {currentQuestion === 1 && (
                     <Question01
                       name={formData.name}
                       errorMessage={error}
@@ -42,17 +53,7 @@ const App = () => {
                         setFormData({ ...formData, name: value });
                       }}
                       onPreviousClick={() => handlePrevious()}
-                      onNextClick={() => {
-                        setError('');
-
-                        if (!formData.name) {
-                          setError('This field is mandatory');
-
-                          return;
-                        }
-
-                        setQuestionNr(questionNr + 1);
-                      }}
+                      onNextClick={() => handleNext(formData.name)}
                     />
                     )}
                   </div>
