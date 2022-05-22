@@ -50,7 +50,7 @@ const App = () => {
   const handleNext = (value: string | string[], errorMessage: string) => {
     setError('');
 
-    if (!value || value.length === 0) {
+    if (!value || !value.length) {
       setError(errorMessage);
 
       return;
@@ -115,7 +115,7 @@ const App = () => {
                         isChildrenChecked={formData.householdInfo.includes('Household has children')}
                         isDependantsChecked={formData.householdInfo.includes('Household has dependants')}
                         errorMessage={error}
-                        onPreviousClick={() => handlePrevious()}
+                        onPreviousClick={handlePrevious}
                         onNextClick={() => handleNext(formData.householdInfo, selectionErrorMessage)}
                         onOptionSelection={(value) => handleOptionSelection(value)}
                       />
